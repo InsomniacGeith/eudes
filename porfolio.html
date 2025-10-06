@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | InsomniacGeith</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+
+  
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="img/logo.jpg" alt="logo">
+        <span class="fw-bold text-light">InsGeith</span>
+      </a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-light" href="#about">À propos</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#skills">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#projects">Projets</a></li>
+          <li class="nav-item"><a class="nav-link text-light" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO Carousel -->
+  <section id="home" class="section position-relative" style="min-height: 100vh;">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active" style="background: url('img/slide_1.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_2.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_4.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_5.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_6.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_7.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_8.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_9.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_10.jpeg') center/cover no-repeat; height: 100vh;"></div>
+        <div class="carousel-item" style="background: url('img/slide_11.jpeg') center/cover no-repeat; height: 100vh;"></div>
+      </div>
+
+      <!-- Overlay sombre -->
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.7); z-index:1;"></div>
+
+      <!-- Texte par-dessus -->
+      <div class="container position-absolute top-50 start-50 translate-middle text-center" style="z-index:2;">
+        <h1 class="display-4 fw-bold">BONJOUR 😁 <br>
+          <span class="typewriter text-primary" id="typewriter"></span>
+        </h1>
+        <p class="lead mt-3">Développeur passionné créant des expériences web et mobile modernes.</p>
+        <a href="#projects" class="btn btn-custom mt-3">Voir mes projets</a>
+        <a href="cv_InsomniacGeith.pdf" download class="btn btn-outline-light mt-3 ms-2">📄 Télécharger mon CV</a>
+      </div>
+
+      <!-- Contrôles -->
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Précédent</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Suivant</span>
+      </button> -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">À propos de moi</h2>
+      <p class="lead">
+        Je suis passionné de programmation. 
+        J'aime travailler sur des projets informatiques et acquérir de nouvelles compétences dans ce domaine en constante évolution.
+         En dehors du travail, j'aime regarder des animes, lire des mangas, faire du sport et jouer à des jeux vidéo.
+          Je suis un grand fan de mangas et je suis fasciné par l'excellence des mangakas professionnels dans leur domaine.
+           J'aime aussi me former en lisant des articles sur l'histoire des technologies et en suivant les dernières tendances du secteur.
+            J'adore apprendre et je suis toujours à la recherche de nouvelles opportunités pour approfondir mes connaissances et mes compétences.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Compétences</h2>
+      <div class="mx-auto" style="max-width:600px">
+
+        <div class="skill-item d-flex align-items-center mb-2">
+          <img src="img_skill/html.jpeg" alt="HTML CSS" class="skill-icon me-2">
+          <img src="img_skill/css.jpeg" alt="HTML CSS" class="skill-icon me-2">
+          <img src="img_skill/boostrap.jpeg" alt="HTML CSS" class="skill-icon me-2">
+          <p class="mb-0">HTML / CSS / Bootstrap</p>
+        </div>
+        <div class="skill-bar"><span data-width="98%"></span></div>
+
+        <div class="skill-item d-flex align-items-center mb-2 mt-3">
+          <img src="img_skill/js.jpeg" alt="JavaScript" class="skill-icon me-2">
+          <img src="img_skill/react.jpeg" alt="JavaScript" class="skill-icon me-2">
+          <p class="mb-0">JavaScript / React</p>
+        </div>
+        <div class="skill-bar"><span data-width="45%"></span></div>
+
+        <div class="skill-item d-flex align-items-center mb-2 mt-3">
+          <img src="img_skill/flutter.jpeg" alt="Flutter" class="skill-icon me-2">
+          <img src="img_skill/flutterflow.jpeg" alt="Flutter" class="skill-icon me-2">
+          <p class="mb-0">Flutter / FlutterFlow</p>
+        </div>
+        <div class="skill-bar"><span data-width="90%"></span></div>
+
+        <div class="skill-item d-flex align-items-center mb-2 mt-3">
+          <img src="img_skill/django.jpeg" alt="Python" class="skill-icon me-2">
+          <p class="mb-0"> Django</p>
+        </div>
+        <div class="skill-bar"><span data-width="35%"></span></div>
+
+        <div class="skill-item d-flex align-items-center mb-2 mt-3">
+          <img src="img_skill/php.jpeg" alt="Python" class="skill-icon me-2">
+          <img src="img_skill/laravel.jpeg" alt="Python" class="skill-icon me-2">
+          <p class="mb-0">PHP / Laravel</p>
+        </div>
+        <div class="skill-bar"><span data-width="75%"></span></div>
+
+        <div class="skill-item d-flex align-items-center mb-2 mt-3">
+          <img src="img_skill/mysql.jpeg" alt="Python" class="skill-icon me-2">
+          <img src="img_skill/xampp.jpeg" alt="Python" class="skill-icon me-2">
+          <p class="mb-0">My SQL / Xampp</p>
+        </div>
+        <div class="skill-bar"><span data-width="75%"></span></div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-5">Projets récents</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card bg-dark text-light h-100 border-0 shadow">
+            <img src="img_project/appli_mobile.png" class="card-img-top project-icon" alt="E-commerce Flutter">
+            <div class="card-body">
+              <h5 class="card-title">Conception d'une appliactionn E-commerce avec Flutter</h5>
+              <p class="card-text">
+                Application mobile connectée à une BD SQL 
+                via API Rest de Django avec gestion des produits et authentification.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-dark text-light h-100 border-0 shadow">
+            <img src="img_project/refont_site_web.png" class="card-img-top project-icon" alt="Portfolio Web">
+            <div class="card-body">
+              <h5 class="card-title">Refonte du site web de XpInformatique</h5>
+              <p class="card-text">
+                Ce projet a impliqué l'utilisation du framework Bootstrap pour assurer une interface responsive et une compatibilité optimale sur tous les appareils.
+                 De plus, des animations JavaScript riches et fluides ont été intégrées pour améliorer l'expérience utilisateur (UX) et rendre la navigation plus dynamique.
+                  Enfin, la librairie React a été employée pour développer une interface utilisateur (UI) modulaire et performante,
+                   garantissant une meilleure maintenabilité et une évolutivité accrue pour l'application front-end.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-dark text-light h-100 border-0 shadow">
+            <img src="img_project/dashboard.png" class="card-img-top project-icon" alt="Dashboard Admin">
+            <div class="card-body">
+              <h5 class="card-title">Dashboard Admin</h5>
+              <p class="card-text">
+                Le projet a consisté en l'élaboration d'une interface d'administration (Dashboard Admin) complète et sécurisée. 
+                Cette solution est développée sur le puissant framework Django,
+                 garantissant une robustesse et une rapidité de développement pour une application mobile.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Contactez-moi</h2>
+      <form id="contact-form" class="mx-auto form-container p-4 rounded-4 shadow-lg" style="max-width:600px; background: rgba(20,20,20,0.85);">
+        <div class="form-floating mb-3">
+          <input type="text" id="name" class="form-control form-input" placeholder="Votre nom" required>
+          <label for="name">Votre nom</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" id="email" class="form-control form-input" placeholder="Votre email" required>
+          <label for="email">Votre email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea id="message" class="form-control form-input" placeholder="Votre message" style="height: 120px;" required></textarea>
+          <label for="message">Votre message</label>
+        </div>
+        <button type="submit" class="btn btn-custom w-100">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 InsomniacGeith. Tous droits réservés.</p>
+  </footer>
+
+  <!-- BOUTON WHATSAPP -->
+  <a href="https://wa.me/24162862458" 
+     class="whatsapp-float" 
+     target="_blank" 
+     title="Discuter sur WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <!-- JS -->
+  <script>
+    emailjs.init("vuTS1uyKwsAcfXbLe");
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.send("service_gmail", "template_contact", {
+        from_name: document.getElementById("name").value,
+        from_email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      }).then(function() {
+        alert("✅ Message envoyé avec succès !");
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        alert("❌ Erreur lors de l’envoi : " + JSON.stringify(error));
+      });
+    });
+
+    // Apparition des sections
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight * 0.8;
+      sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top < triggerBottom) sec.classList.add('visible');
+      });
+    });
+
+    // Animation des barres de compétences
+    const skillBars = document.querySelectorAll('.skill-bar span');
+    window.addEventListener('scroll', () => {
+      skillBars.forEach(bar => {
+        if (bar.getBoundingClientRect().top < window.innerHeight - 100) {
+          bar.style.width = bar.getAttribute('data-width');
+        }
+      });
+    });
+
+    // Typewriter
+    const texts = ["Je suis Eudes Paulin", "alias InsomniacGeith", "un DevOps", "Passionné d'informatique", "Fan de MANGA", "et de Jeux Vidéos"];
+    let currentText = 0, currentChar = 0, typing = true;
+    const typewriterElement = document.getElementById("typewriter");
+    const speed = 100, pause = 1500;
+
+    function type() {
+      if (typing) {
+        typewriterElement.textContent += texts[currentText][currentChar++];
+        if (currentChar === texts[currentText].length) { typing = false; setTimeout(type, pause); }
+        else setTimeout(type, speed);
+      } else {
+        typewriterElement.textContent = typewriterElement.textContent.slice(0,-1);
+        if (typewriterElement.textContent.length === 0) { typing=true; currentChar=0; currentText=(currentText+1)%texts.length; }
+        setTimeout(type, speed/2);
+      }
+    }
+    type();
+  </script>
+
+  <!-- changement de auto du côté des nav-links -->
+   <script>
+  const sectionsNav = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+
+    sectionsNav.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
