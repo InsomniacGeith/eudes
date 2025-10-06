@@ -195,7 +195,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section text-center">
+  <!-- <section id="contact" class="section text-center">
     <div class="container">
       <h2 class="fw-bold mb-4">Contactez-moi</h2>
       <form id="contact-form" class="mx-auto form-container p-4 rounded-4 shadow-lg" style="max-width:600px; background: rgba(20,20,20,0.85);">
@@ -214,7 +214,35 @@
         <button type="submit" class="btn btn-custom w-100">Envoyer</button>
       </form>
     </div>
-  </section>
+  </section> -->
+  <!-- version du formulaire sans hebergement github -->
+
+
+  <!-- version pour l'hebergement github -->
+   <!-- CONTACT -->
+<section id="contact" class="section text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">Contactez-moi</h2>
+    <form id="contact-form"
+          class="mx-auto form-container p-4 rounded-4 shadow-lg"
+          style="max-width:600px; background: rgba(20,20,20,0.85);">
+      <div class="form-floating mb-3">
+        <input type="text" id="name" class="form-control form-input" placeholder="Votre nom" required>
+        <label for="name">Votre nom</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" id="email" class="form-control form-input" placeholder="Votre email" required>
+        <label for="email">Votre email</label>
+      </div>
+      <div class="form-floating mb-3">
+        <textarea id="message" class="form-control form-input" placeholder="Votre message" style="height: 120px;" required></textarea>
+        <label for="message">Votre message</label>
+      </div>
+      <button type="submit" class="btn btn-custom w-100">Envoyer</button>
+    </form>
+  </div>
+</section>
+
 
   <!-- FOOTER -->
   <footer>
@@ -231,21 +259,64 @@
 
   <!-- JS -->
   <script>
-    emailjs.init("vuTS1uyKwsAcfXbLe");
 
-    document.getElementById('contact-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      emailjs.send("service_gmail", "template_contact", {
-        from_name: document.getElementById("name").value,
-        from_email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-      }).then(function() {
-        alert("✅ Message envoyé avec succès !");
-        document.getElementById("contact-form").reset();
-      }, function(error) {
-        alert("❌ Erreur lors de l’envoi : " + JSON.stringify(error));
-      });
+    // script EmailJS sans Github start
+    // emailjs.init("vuTS1uyKwsAcfXbLe");
+
+    // document.getElementById('contact-form').addEventListener('submit', function(event) {
+    //   event.preventDefault();
+    //   emailjs.send("service_gmail", "template_contact", {
+    //     from_name: document.getElementById("name").value,
+    //     from_email: document.getElementById("email").value,
+    //     message: document.getElementById("message").value
+    //   }).then(function() {
+    //     alert("✅ Message envoyé avec succès !");
+    //     document.getElementById("contact-form").reset();
+    //   }, function(error) {
+    //     alert("❌ Erreur lors de l’envoi : " + JSON.stringify(error));
+    //   });
+    // });
+    // script EmailJS sans Github end
+
+
+    // script EmailJS avec Github start
+    (function(){
+    emailjs.init("vuTS1uyKwsAcfXbLe"); // ✅ ta clé publique EmailJS
+  })();
+
+  const form = document.getElementById('contact-form');
+  const container = document.querySelector('#contact .container'); // on cible le conteneur pour insérer le message
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.send("service_gmail", "template_contact", {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    }).then(function() {
+      //  Affichage d'un message de succès dans la page
+      form.reset();
+      container.insertAdjacentHTML('beforeend',
+        `<div class="alert alert-success mt-3 rounded-3" style="max-width:600px; margin:auto;">
+           Merci ! Votre message a été envoyé avec succès.
+        </div>`
+      );
+      //  Faire disparaître le message après 5 secondes
+      setTimeout(() => document.querySelector('.alert')?.remove(), 5000);
+    }, function(error) {
+      //  Affichage d'une erreur dans la page
+      container.insertAdjacentHTML('beforeend',
+        `<div class="alert alert-danger mt-3 rounded-3" style="max-width:600px; margin:auto;">
+           Une erreur est survenue : ${error.text || "Veuillez réessayer."}
+        </div>`
+      );
+      //  Faire disparaître le message d'erreur après 5 secondes
+      setTimeout(() => document.querySelector('.alert')?.remove(), 5000);
     });
+  });
+  // script EmailJS avec Github end
+
 
     // Apparition des sections
     const sections = document.querySelectorAll('.section');
@@ -287,7 +358,7 @@
   </script>
 
   <!-- changement de auto du côté des nav-links -->
-   <script>
+<script>
   const sectionsNav = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
@@ -312,5 +383,7 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 📦 Ajoute ce script juste avant la balise </body> -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>
 </html>
